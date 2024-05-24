@@ -27,7 +27,7 @@ namespace std::linalg {
 
 
 ## 適格要件
-- `Real`はCV修飾されていない浮動小数点数型であること。
+- `Real`は`complex<Real>`が規定できる型であること。
 
 
 ## 例
