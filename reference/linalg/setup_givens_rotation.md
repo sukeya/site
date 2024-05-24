@@ -40,13 +40,19 @@ c^2 + |s|^2 &= 1
 $$
 
 ただし、`s`と`r`の型は`a`と`b`の型による。
-`r`は$(a, b)^T$のユークリッドノルム、つまり$(|a|^2 + |b|^2)^(1/2)$である。
 
-- (1) `a`と`b`の型が`Real`の場合、`s`と`r`の型も`Real`。
-- (2) `a`と`b`の型が`complex<Real>`の場合、`s`と`r`の型も`complex<Real>`。
+- (1) `a`と`b`の型が`Real`の場合、`s`と`r`の型も`Real`。`r`は$(a, b)^T$のユークリッドノルム、つまり$\sqrt{|a|^2 + |b|^2}$である。
+- (2) `a`と`b`の型が`complex<Real>`の場合、`s`と`r`の型も`complex<Real>`。以下で定義される$sgn$関数を用いると、`r`は$sgn(a) * \sqrt{|a|^2 + |b|^2}$である。
+$$
+sgn(x)=
+    \begin{cases}
+        \frac{x}{|x|}   &   \text{($x \neq 0$)}  \\
+        1        &   \text{($x = 0$)}
+    \end{cases}
+$$
 
 
-## 適格要件
+## テンプレートパラメータ制約
 - `Real`は`complex<Real>`が規定できる型であること。
 
 
@@ -62,7 +68,7 @@ $$
 
 ## バージョン
 ### 言語
-- C++11
+- C++26
 
 ### 処理系
 - [Clang](/implementation.md#clang): ??
@@ -77,4 +83,5 @@ $$
 
 ## 参照
 - [P0788R3 Standard Library Specification in a Concepts and Contracts World](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0788r3.pdf)
-- [Numerics library](https://eel.is/c++draft/complex.numbers)
+- [Working Draft Programming Languages — C++: 28 Numerics libarary](https://eel.is/c++draft/complex.numbers)
+- [LAPACK: clartg](https://netlib.org/lapack/explore-html/da/dd3/group__lartg_ga45afd4405cf6da478ce4de9576303369.html#ga45afd4405cf6da478ce4de9576303369)
