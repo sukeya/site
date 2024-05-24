@@ -7,11 +7,13 @@
 * cpp26[meta cpp]
 
 ```cpp
-template<class Real>
-setup_givens_rotation_result<Real> setup_givens_rotation(Real a, Real b) noexcept; // (1)
+namespace std::linalg {
+  template<class Real>
+  setup_givens_rotation_result<Real> setup_givens_rotation(Real a, Real b) noexcept; // (1)
 
-template<class Real>
-setup_givens_rotation_result<complex<Real>> setup_givens_rotation(complex<Real> a, complex<Real> b) noexcept; // (2)
+  template<class Real>
+  setup_givens_rotation_result<complex<Real>> setup_givens_rotation(complex<Real> a, complex<Real> b) noexcept; // (2)
+}
 ```
 
 
